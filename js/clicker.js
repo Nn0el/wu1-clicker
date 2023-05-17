@@ -28,7 +28,8 @@ let moneyPerClick = 1;
 let moneyPerSecond = 0;
 let acquiredUpgrades = 0;
 let last = 0;
-let numberOfClicks = 0; // hur många gånger har spelare eg. klickat
+let numberOfClicks = 0;  // hur många gånger har spelare eg. klickat
+
 let active = false; // exempel för att visa att du kan lägga till klass för att indikera att spelare får valuta
 
 // likt upgrades skapas här en array med objekt som innehåller olika former
@@ -37,22 +38,22 @@ let active = false; // exempel för att visa att du kan lägga till klass för a
 
 let achievements = [
     {
-        description: 'Museet är redo att öppna, grattis! ',
+        description: 'Julen är här',
         requiredUpgrades: 1,
         acquired: false,
     },
     {
-        description: 'Nu börjar det likna något, fortsätt gräva!',
+        description: 'HOOO HOOO HOOOOO',
         requiredUpgrades: 10,
         acquired: false,
     },
     {
-        description: 'Klickare, med licens att klicka!',
+        description: 'Bjällerklang bjällerklang',
         requiredClicks: 10,
         acquired: false,
     },
     {
-        description: 'Tac-2 god!',
+        description: 'JAG SÅG MAMMA KYSSA TOMTEN?!?!!?!!??!',
         requiredClicks: 10000,
         acquired: false,
     },
@@ -72,10 +73,16 @@ clickerButton.addEventListener(
     'click',
     () => {
         // vid click öka score med moneyPerClick
+        upgrades.forEach((click) => {
+
+        });
         money += moneyPerClick;
+
         // håll koll på hur många gånger spelaren klickat
         numberOfClicks += 1;
         // console.log(clicker.score);
+        const gpc = document.getElementById('gp')
+        gpc.textContent=numberOfClicks
     },
     false
 );
@@ -151,6 +158,14 @@ window.addEventListener('load', (event) => {
     upgrades.forEach((upgrade) => {
         upgradeList.appendChild(createCard(upgrade));
     });
+
+    let gp = createCard({ 
+        name: 'Gyllene pepparkakan',
+        cost: 9999999,
+        clicks: numberOfClicks,
+        id: 'gp'
+    })
+    upgradeList.appendChild(gp);
     window.requestAnimationFrame(step);
 });
 
@@ -191,8 +206,10 @@ upgrades = [
     {
         name: 'Monster och Glögg blandning',
         cost: 100000,
-        clicks: 1111,
+        clicks: 1234,
     },
+
+
 ];
 
 /* createCard är en funktion som tar ett upgrade objekt som parameter och skapar
@@ -219,6 +236,10 @@ function createCard(upgrade) {
     const header = document.createElement('p');
     header.classList.add('title');
     const cost = document.createElement('p');
+    if(upgrade.id){
+        card.setAttribute('id',  upgrade.id);
+        
+    }
     if (upgrade.amount) {
         header.textContent = `${upgrade.name}, +${upgrade.amount} per sekund.`;
     } else {
