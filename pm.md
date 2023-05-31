@@ -6,3 +6,9 @@ Att ändra på sidan gick väldigt bra för mig och att förstå hur man gjorde 
 Jag ville skapa andra slags knappar som gav speciella krafter eller liknande men jag lyckades aldrig med det. Min sida ser ganska ful ut just nu för jag försökte få in en bild bakom alla knappar och så men jag lyckades aldrig med det. 
 
 Det gick bra att få till min egna stil på spelet men det gick sämre med att få clickern att se fin ut och att skapa ny features. Så jag behöver nog större kunskap om javascript och css. Jag tror clickern hade kunnat bli väldigt roligt om det hade sakerna jag inte lyckades med. 
+
+
+Noel Johansson 2023-05-24
+
+Inledning 
+

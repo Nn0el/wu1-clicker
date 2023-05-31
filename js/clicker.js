@@ -13,7 +13,7 @@ const mpsTracker = document.querySelector('#mps'); // money per second
 const mpcTracker = document.querySelector('#mpc'); // money per click
 const upgradesTracker = document.querySelector('#upgrades');
 const upgradeList = document.querySelector('#upgradelist');
-const msgbox = document.querySelector('#msgbox');
+const msgbox = document.querySelector('#msgbox'); 
 const audioAchievement = document.querySelector('#swoosh');
 
 /* Följande variabler använder vi för att hålla reda på hur mycket pengar som
@@ -164,6 +164,7 @@ window.addEventListener('load', (event) => {
         cost: 9999999,
         clicks: numberOfClicks,
         id: 'gp'
+    
     })
     upgradeList.appendChild(gp);
     window.requestAnimationFrame(step);
